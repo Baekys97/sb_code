@@ -9,7 +9,7 @@ pipeline {
     gitName = 'Baekys97'
     gitEmail = 'ys0907kr@naver.com'
     githubCredential = 'git_cre2'
-    dockerHubRegistry = 'oolralra/sbimage'
+    dockerHubRegistry = 'ys100kr/0220jenkins'
   }
   stages {
     stage('Checkout Github') {
