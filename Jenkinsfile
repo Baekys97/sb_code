@@ -1,3 +1,4 @@
+
 pipeline {
   agent any
   // any, none, label, node, docker, dockerfile, kubernetes
@@ -13,7 +14,7 @@ pipeline {
   stages {
     stage('Checkout Github') {
       steps {
-          checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: githubCredential, url: 'https://github.com/Baekys/sb_code.git']]])
+          checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: githubCredential, url: 'https://github.com/Baekys97/sb_code.git']]])
           }
       post {
         failure {
