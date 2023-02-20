@@ -7,7 +7,7 @@ pipeline {
   environment {
     gitName = 'Baekys97'
     gitEmail = 'ys0907kr@naver.com'
-    githubCredential = 'git_cre'
+    githubCredential = 'git_cre2'
     dockerHubRegistry = 'oolralra/sbimage'
   }
   stages {
