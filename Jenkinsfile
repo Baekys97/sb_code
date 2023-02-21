@@ -84,8 +84,21 @@ pipeline {
     }
     stage('Docker Container Deploy') {
       steps {
-          sh "docker rm -f spring"
-          sh "docker run -dp 7979:8085 --name spring ${dockerHubRegistry}:${currentBuild.number}"
+        git credentialsId: githubCredential,
+            url: 'https://github.com/Baekys97/sb_code.git',
+            branch: 'main'  
+
+        // 이미지 태그 변경 후 메인 브랜치에 푸시
+        sh "git config --global user.email ${gitEmail}"
+        sh "git config --global user.name ${gitName}"
+        sh "sed -i 's/sbimage:.*/sbimage:${currentBuild.number}/g' deploy/sb-deploy.yml"
+        sh "git add ."
+        sh "git commit -m 'fix:${dockerHubRegistry} ${currentBuild.number} image versioning'"
+        sh "git branch -M main"
+        sh "git remote remove origin"
+        sh "git remote add origin git@github.com:Baekys97/simple_sb.git"
+        sh "git push -u origin main"
+          
           }
       post {
         failure {
