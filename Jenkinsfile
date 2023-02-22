@@ -82,7 +82,7 @@ pipeline {
         }
       }
     }
-    stage('Docker Container Deploy') {
+    stage('k8s manifest file update') {
       steps {
         git credentialsId: githubCredential,
             url: 'https://github.com/Baekys97/sb_code.git',
