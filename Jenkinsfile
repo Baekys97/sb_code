@@ -8,7 +8,7 @@ pipeline {
   environment {
     gitName = 'Baekys97'
     gitEmail = 'Baekys97@naver.com'
-    githubCredential = 'git_cre2'
+    githubCredential = 'git_cre'
     dockerHubRegistry = 'ys100kr/0220jenkins'
     dockerHubRegistryCredential = 'docker_cre'
   }
