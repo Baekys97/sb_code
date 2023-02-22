@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: spring
-          image: ys100kr/0220jenkins:22
+          image: ys100kr/0220jenkins:13
